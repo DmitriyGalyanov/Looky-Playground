@@ -8,17 +8,17 @@
 import SwiftUI
 
 struct ContentView: View {
-    var body: some View {
-        VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundStyle(.tint)
-            Text("Hello, world!")
+  var body: some View {
+    ScrollView {
+      LazyVStack {
+        ForEach(postsMock) { post in
+          PostView(post: post)
         }
-        .padding()
+      }
     }
+  }
 }
 
 #Preview {
-    ContentView()
+  ContentView()
 }
